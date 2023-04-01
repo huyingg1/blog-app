@@ -38,3 +38,4 @@ DEMO link: https://blog69.herokuapp.com/dashboard
 ## Questions
 
 For any questions or concerns, please contact me at yinberry@gmail.com. You can also visit my [GitHub profile](https://github.com/huyingg1).
+![screenshoot-blog](blog-full.png)
