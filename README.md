@@ -33,7 +33,7 @@ contribution guidelines
 
 ## Tests
 
-test
+DEMO link: https://blog69.herokuapp.com/dashboard
 
 ## Questions
 
