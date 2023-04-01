@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="/css/article.css" />
+
+<section class="container">
+  {{#if isCreator}}
+    <button id="edit-article-button">Edit Article</button>
+  {{/if}}
+
+  <h3 class="article-title">{{title}}</h3>
+  <h5>By: {{creator.username}}</h5>
+  <h5>Post Date:
+    {{format_time post_date}},
+    {{format_date post_date}}</h5>
+  <p>{{content}}</p>
+</section>
+{{#if isCreator}}
+  <script>
+    document.getElementById("edit-article-button").addEventListener("click",
+    function () { document.location.href = "/edit-article/{{id}}"; });
+  </script>
+{{/if}}
+
+<div class="comments">
+  <h4>Comments:</h4>
+  {{#each comments as |comment|}}
+    <div class="card mt-2">
+      <div class="card-body">
+        <h5 class="card-title">By: {{comment.user.username}}</h5>
+        <p class="card-text">{{comment.content}}</p>
+        <p class="card-text">
+          <small class="text-muted">{{format_time comment.comment_date}},
+            {{format_date comment.comment_date}}</small>
+        </p>
+      </div>
+    </div>
+  {{/each}}
+
+</div>
+
+{{#if loggedIn}}
+  <form id="comment-form" class="mt-4">
+    <div class="form-group">
+      <label for="comment-content" class="addacomment">Add a comment:</label>
+      <textarea
+        class="form-control"
+        id="comment-content"
+        rows="2"
+        cols="80"
+        placeholder="Write your comment here..."
+      ></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{{/if}}
+<script src="/js/addcomment.js"></script>

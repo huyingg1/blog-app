@@ -1,0 +1,12 @@
+{{#each articles}}
+  <section class="card">
+    <a href="/article/{{id}}">
+      <header>{{title}}</header>
+      <p>By
+        {{creator.username}}<br />on
+        {{format_time post_date}},
+        {{format_date post_date}}</p>
+
+    </a>
+  </section>
+{{/each}}

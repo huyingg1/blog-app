@@ -1,0 +1,17 @@
+<div class="articles-container">
+  {{#if loggedIn}}
+    <button id="new-article-button" class="newarticle">New Article</button>
+  {{/if}}
+  {{#each articles as |article|}}
+    {{> homepage-details}}
+  {{/each}}
+</div>
+
+{{#if loggedIn}}
+  <script>
+    document.getElementById("new-article-button").addEventListener("click", function () {
+      document.location.href = "/new-article";
+    });
+  </script>
+{{/if}}
+
